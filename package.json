@@ -1,8 +1,10 @@
 {
+  "private": true,
   "name": "my-awesome-package",
   "version": "1.0.0",
   "scripts": {
-    "prettier": "prettier --write src/**/*.{js,css}"
+    "prettier": "prettier --write src/**/*.{js,css}",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "husky": "^5.0.9"
