@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const next = require("next");
-const { createProxyMiddleware } = require("http-proxy-middleware");
+const { createProxyMiddleware } = require("http-proxy-middleware") ;
 const Url = require("url-parse");
 const url = new Url(process.env.API_ENDPOINT);
 
@@ -9,16 +9,16 @@ const port = parseInt(process.env.PORT, 10) || 8080;
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
-asdfas
+asdfas;
 app.prepare().then(() => {
   const server = express();
   server.use(
     "/graphql",
-    createProxyMiddleware(   {
+    createProxyMiddleware({
       target: url.origin,
       changeOrigin: true,
       secure: false,
-      pathRewrite: { "^/graphql": url.pathname  },
+      pathRewrite: { "^/graphql": url.pathname },
     })
   );
 
