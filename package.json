@@ -4,17 +4,21 @@
   "scripts": {
     "prettier": "prettier --write src/**/*.{js,css}"
   },
+  "dependencies": {
+    "husky": "^5.0.9"
+  },
   "husky": {
     "hooks": {
-        "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
-    "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-    "post-applypatch": "echo \"[Husky] post-applypatch\"",
-    "pre-commit": "echo \"[Husky] pre-commit\"",
+      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
+      "pre-commit": "echo \"[Husky] pre-commit\""
     }
   },
   "lint-staged": {
     "linters": {
-      "src/**/*.{js,css}": ["prettier --write", "git add"]
+      "src/**/*.{js,css}": [
+        "prettier --write",
+        "git add"
+      ]
     }
   }
 }
