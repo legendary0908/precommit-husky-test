@@ -1,0 +1,17 @@
+{
+  "name": "my-awesome-package",
+  "version": "1.0.0",
+  "scripts": {
+    "prettier": "prettier --write src/**/*.{js,css}"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,css}": ["prettier --write", "git add"]
+    }
+  }
+}
