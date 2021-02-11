@@ -2,11 +2,11 @@
   "name": "my-awesome-package",
   "version": "1.0.0",
   "scripts": {
-    "prettier": "prettier --check src/**/*.{js,css}"
+    "prettier": "prettier --write src/**/*.{js,css}"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run prettier"
     }
   },
   "lint-staged": {
